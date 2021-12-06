@@ -37,7 +37,7 @@ router.get('/resources/:id', (req,
   res.json(resource);
 });
 
-// Updating a resource
+// Updating an existing resource
 router.put('/resources/:id', (req, res) => {
   // If resource not found, return 404, otherwise update it
   // and return the updated object or some value to confirm deletion

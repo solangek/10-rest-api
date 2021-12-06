@@ -1,36 +1,57 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-  <title>REST API</title>
+  <title>A Page using our REST API</title>
   <script src="javascripts/funcs.js"></script>
 </head>
 
 <body>
-  <h1>Rest API template</h1>
-  <p>This example only gives you a "template" to implement REST services.
-    </p>
-  <p>You  need to write the code that does the real work on the <b>server side</b>  !</p>
+  <h1>Rest API examples</h1>
+  <p>This example only gives you a "template" to implement REST services. </p>
+  <p>You  need to write the code that does the real work on the <strong>server side</strong>  !</p>
   <p>You also need to write on the
-    <b>client side</b>
+    <strong>client side</strong>
     the javascript Ajax calls to call the API!</p>
-<ol>
-    <p>We can do some simple simulation with a link and a form:</p>
-  <li>a GET request: <a href="/api/resources/milk">getting an item </a>.</li>
-  <li>a POST request: we use a form for demo but in reality you would implement this as AJAX!
-    <form action="/api/resources" method="post">
-      type something: <input type="text" name="prodname"><br/>
-      <input type="submit" value="post request example"><br/><br/>
-      <h3>תירגול:</h3>
-      <input type="button" value="delete example" id="delete_button"><br/><br/>
-      <input type="button" value="put example" id="put_button"><br/><br/>
 
+    <p>We can do some simple simulations:</p>
+
+  <h2>Ajax Response:</h2>
+  <div id="data" style="background-color: #fae9a5">
+    <p>will appear here...</p>
+  </div>
+
+  <h2>a GET request directly with link/URL:  </h2>
+  Just for testing: we never want to display JSON data directly on the page, but we can use the link to call the API directly.
+  <br/><a href="/api/resources/milk">getting an item </a>.
+
+  <h2>a GET request directly with Ajax Form:  </h2>
+
+  <form action="/api/resources" method="get" id="ajaxformget">
+    Product ID: <input type="text" name="productId1" id="productId1"><br/>
+    <input type="submit" value="GET request example"><br/><br/>
+  </form>
+
+  <h2>a GET request directly with simple button / no form:  </h2>
+
+  <button id="getbutton">GET request example</button><br/>
+
+
+  <h2>a POST request:   </h2>
+
+    <form action="/api/resources" method="post" id="ajaxformpost">
+      type something: <input type="text" name="prodname" id="prodname"><br/>
+      <input type="submit" value="POST request example"><br/><br/>
     </form>
 
-  </li>
+    <h3>תירגול:</h3>
 
-  <div id="data"></div>
-</ol>
+
+  <h2>a DELETE request:   </h2>
+  <button id="deletebutton">DELETE request example</button><br/>
+  <h2>an UPDATE request:   </h2>
+  <<button id="updatebutton">UPDATE request example</button><br/>
+
 </body>
 
 </html>
