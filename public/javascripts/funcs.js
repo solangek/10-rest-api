@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function() {
     document.getElementById("updatebutton").addEventListener("click", updateData);
 });
 
-// THESE CODE EXAMPLES DO NOT DEAL WITH SERVER ERRORS since it depends on the
+// THESE CODE EXAMPLES DO NOT DEAL WITH HTTP ERRORS since it depends on the
 // protocol defined by the server to return specific status codes.
 
 // GET request
@@ -29,7 +29,7 @@ function getData(event) {
         console.log(data);
     })
     .catch(function(error) {
-        console.log(error);
+        console.log(error); // we should display the error to the user
     });
 }
 
@@ -47,7 +47,7 @@ function getDataNoForm(event) {
         console.log(data);
     })
         .catch(function(error) {
-            console.log(error);
+            console.log(error); // we should display the error to the user
         });
 }
 

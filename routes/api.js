@@ -4,6 +4,7 @@ var router = express.Router();
 // see https://developer.mozilla.org/en-US/docs/Learn/Server-side/Express_Nodejs/routes
 // for more examples of route definitions
 
+// THIS EXAMPLE DOES NOT DEAL WITH ERRORS - no check on the parameters
 
 // Creating a resource
 router.post('/resources', (req, res) => {
@@ -33,6 +34,8 @@ router.get('/resources/:id', (req,
   // Lookup the resource and if not found, return 404
   //         res.status(404).send('Resource not found.');
   // Else, return the resource object -  make sure to convert to JSON response
+
+  // we return some fixed value for demonstration purpose
   let resource = [{somefield: "some value "}];
   res.json(resource);
 });
@@ -47,14 +50,16 @@ router.put('/resources/:id', (req, res) => {
 // Deleting a resource
 router.delete('/resources/:id', (req, res) => {
   // If resource not found, return 404, otherwise delete it
+
   // and return the deleted object or some value to confirm deletion
+  // we could also return a 204 status code
   res.send(req.params.id);
 });
 
 
-// another route example for deleting a the resource
+// another route example for deleting a resource using GET
+// this is WRONG! you are supposed to use DELETE for deleting a resource
 router.get('/resources/:id/delete', (req, res) => {
-
   const resourceId = req.params.id;
   // Return the resources
   let resource = {deleted: req.params.id}
