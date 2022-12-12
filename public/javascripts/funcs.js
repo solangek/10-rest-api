@@ -8,6 +8,8 @@ document.addEventListener("DOMContentLoaded", function() {
     document.getElementById("updatebutton").addEventListener("click", updateData);
 });
 
+// THESE CODE EXAMPLES DO NOT DEAL WITH SERVER ERRORS since it depends on the
+// protocol defined by the server to return specific status codes.
 
 // GET request
 function getData(event) {
@@ -54,12 +56,8 @@ function postData(event) {
     event.preventDefault();
     fetch("/api/resources", {
         method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-            "prodname": document.getElementById("prodname").value
-        })
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify({"prodname": document.getElementById("prodname").value})
     }).then(function(response) {
         return response.json();
     }).then(function(data) {
