@@ -5,6 +5,7 @@ var router = express.Router();
 // for more examples of route definitions
 
 // THIS EXAMPLE DOES NOT DEAL WITH ERRORS - no check on the parameters
+// THIS EXAMPLE DOES NOT DEAL WITH VALIDATION - no check on the parameters
 
 // Creating a resource
 router.post('/resources', (req, res) => {
@@ -28,16 +29,16 @@ router.get('/resources', (req, res) => {
 
 // Getting a single resource
 // for example /resources/123 where 123 is some identifier to search for a resource
-router.get('/resources/:id', (req,
-                                              res) => {
+router.get('/resources/:id', (req, res) => {
   const resourceId = req.params.id;
   // Lookup the resource and if not found, return 404
   //         res.status(404).send('Resource not found.');
   // Else, return the resource object -  make sure to convert to JSON response
 
   // we return some fixed value for demonstration purpose
-  let resource = [{somefield: "some value "}];
+  let resource = [{somefield: resourceId}];
   res.json(resource);
+
 });
 
 // Updating an existing resource
