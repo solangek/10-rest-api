@@ -4,8 +4,8 @@ var router = express.Router();
 // see https://developer.mozilla.org/en-US/docs/Learn/Server-side/Express_Nodejs/routes
 // for more examples of route definitions
 
-// THIS EXAMPLE DOES NOT DEAL WITH ERRORS - no check on the parameters
-// THIS EXAMPLE DOES NOT DEAL WITH VALIDATION - no check on the parameters
+// THIS EXAMPLE DOES NOT (and should) DEAL WITH ERRORS -  check on the parameters
+// THIS EXAMPLE DOES NOT (and should) DEAL WITH VALIDATION -  check on the parameters
 
 // Creating a resource
 router.post('/resources', (req, res) => {
@@ -36,7 +36,7 @@ router.get('/resources/:id', (req, res) => {
   // Else, return the resource object -  make sure to convert to JSON response
 
   // we return some fixed value for demonstration purpose
-  let resource = [{somefield: resourceId}];
+  let resource = [{somefield: resourceId},{somefield: "another value "}];
   res.json(resource);
 
 });

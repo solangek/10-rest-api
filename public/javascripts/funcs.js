@@ -17,9 +17,12 @@ function getData(event) {
     let theurl = event.target.action; // the form ACTION attribute - we can also ignore it and just hardcode the url
 
     fetch(`${theurl}/${document.getElementById("productId1").value}`)
-    .then(function(response) {
-        return response.json();
-    }).then(function(data) {
+    .then(
+        function(response) {
+            return response.json();
+        }
+    )
+    .then(function(data) {
         let html = "GET response received :<ol>";
         data.forEach(function(item) {
             html += `<li>${item.somefield}</li>`;
