@@ -60,7 +60,7 @@ function postData(event) {
     fetch("/api/resources", {
         method: "POST",
         headers: {"Content-Type": "application/json"},
-        body: JSON.stringify({"prodname": document.getElementById("prodname").value})
+        body: JSON.stringify({"prodname": document.getElementById("prodname").value}) // {prodname: "123"}
     }).then(function(response) {
         return response.json();
     }).then(function(data) {

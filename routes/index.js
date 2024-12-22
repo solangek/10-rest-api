@@ -9,7 +9,7 @@ var router = express.Router();
  * as it will be easier to add dynamic content in the future.
  */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' }); // render the index.ejs file
+  res.render('index', { title: 'Rest API basic example' }); // render the index.ejs file
 });
 
 module.exports = router;

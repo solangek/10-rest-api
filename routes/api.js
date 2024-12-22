@@ -37,12 +37,13 @@ router.get('/resources/:id', (req, res) => {
 
   // we return some fixed value for demonstration purpose
   let resource = [{somefield: resourceId},{somefield: "another value "}];
-  res.json(resource);
+  res.json(resource); // 200
 
 });
 
 // Updating an existing resource
 router.put('/resources/:id', (req, res) => {
+  const resourceId = req.params.id; // Extract the resource ID from the URL
   // If resource not found, return 404, otherwise update it
   // and return the updated object or some value to confirm deletion
   res.json(req.params.id);
@@ -50,16 +51,19 @@ router.put('/resources/:id', (req, res) => {
 
 // Deleting a resource
 router.delete('/resources/:id', (req, res) => {
+  const resourceId = req.params.id; // Extract the resource ID from the URL
   // If resource not found, return 404, otherwise delete it
 
   // and return the deleted object or some value to confirm deletion
+  // Delete the resource and return a confirmation
+  res.json({deleted: resourceId});
   // we could also return a 204 status code
-  res.send(req.params.id);
+  // res.status(204).send();
 });
 
 
-// another route example for deleting a resource using GET
-// this is WRONG! you are supposed to use DELETE for deleting a resource
+// WHAT NOT TO DO!!! USE http GET FOR DELETING,
+// instead use DELETE method for deleting resources
 router.get('/resources/:id/delete', (req, res) => {
   const resourceId = req.params.id;
   // Return the resources
