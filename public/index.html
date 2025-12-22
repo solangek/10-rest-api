@@ -24,7 +24,7 @@
 
   <h2>a GET request directly with link/URL:  </h2>
   Just for testing: we never want to display JSON data directly on the page, but we can use the link to call the API directly.
-  <br/><a href="/api/resources/milk">getting an item </a>.
+  <br/><a href="/api/resources/1">getting an item </a>.
 
   <h2>a GET request directly with Ajax Form:  </h2>
 
@@ -49,9 +49,17 @@
 
 
   <h2>a DELETE request:   </h2>
-  <button id="deletebutton">DELETE request example</button><br/>
+  <form id="deleteform">
+    Resource ID to delete: <input type="text" name="deleteId" id="deleteId"><br/>
+    <input type="submit" value="DELETE request example"><br/><br/>
+  </form>
   <h2>an UPDATE request:   </h2>
-  <button id="updatebutton">UPDATE request example</button><br/>
+  <form id="updateform">
+    Resource ID to update: <input type="text" name="updateId" id="updateId"><br/>
+    New name (optional): <input type="text" name="updateName" id="updateName"><br/>
+    New description (optional): <input type="text" name="updateDesc" id="updateDesc"><br/>
+    <input type="submit" value="UPDATE request example"><br/><br/>
+  </form>
 
 </body>
 
